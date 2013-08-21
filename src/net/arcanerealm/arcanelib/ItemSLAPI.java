@@ -102,6 +102,12 @@ public class ItemSLAPI
         return result;
     }
     
+    /**
+     * Adds an enchantment to an item stack
+     * @param item The item that it should add the enchantment to
+     * @param enchantSave The save string from the enchantment
+     * @return Bukkit ItemStack with an enchantment
+     */
     public static ItemStack addEnchantmentFromSave(ItemStack item, String enchantSave)
     {
         ItemStack result = item;
