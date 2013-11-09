@@ -61,6 +61,8 @@ public class ItemSLAPI
     {
         String[] split = saveString.split(" ");
         
+        if(split[0].equalsIgnoreCase("0")) return null;
+        
         Material mat = Material.matchMaterial(split[0]);
         int amount = Integer.parseInt(split[1]);
         byte data;
