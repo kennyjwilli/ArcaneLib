@@ -20,6 +20,11 @@ public class ItemSLAPI
      */
     public static String itemStackToSaveString(ItemStack item)
     {
+        if(item == null)
+        {
+            return "0";
+        }
+        
         String output = "";
         output += item.getType().name();
         output += " ";
