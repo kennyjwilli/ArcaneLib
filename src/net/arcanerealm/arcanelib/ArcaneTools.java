@@ -38,4 +38,18 @@ public class ArcaneTools
         int z = Integer.parseInt(split[3]);
         return new Location(Bukkit.getWorld(world), x, y, z);
     }
+    
+    /**
+     * Prints a chat friendly version of a stacktrace
+     * @param stackTrace The stack trace elements
+     * @return Chat friendly version of a StackTrace
+     */
+    public static String getStackTraceError(StackTraceElement[] stackTrace)
+    {
+//        String fullClassName = stackTrace[stackTrace.length - 1].getClassName();
+//        String className = fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+//        String methodName = stackTrace[stackTrace.length - 1].getMethodName();
+//        int lineNumber = stackTrace[stackTrace.length - 1].getLineNumber();
+        return stackTrace[stackTrace.length - 1].toString();
+    }
 }
