@@ -1,7 +1,9 @@
 
 package net.arcanerealm.arcanelib;
 
+import java.util.Collection;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 
 /**
@@ -51,5 +53,49 @@ public class ArcaneTools
 //        String methodName = stackTrace[stackTrace.length - 1].getMethodName();
 //        int lineNumber = stackTrace[stackTrace.length - 1].getLineNumber();
         return stackTrace[stackTrace.length - 1].toString();
+    }
+    
+    /**
+     * Converts a list of strings into a single string separated by commas
+     * @param list List of strings
+     * @param color Should the method include default MC coloring?
+     * @return List separated by commands of strings
+     */
+    public static String convertListToString(Collection<String> list, boolean color)
+    {
+        boolean first = false;
+        int i = 1;
+        StringBuilder result = new StringBuilder();
+        for(String s : list)
+        {
+            if(first)
+            {
+                if(color)
+                {
+                    result.append(ChatColor.WHITE).append(", ");
+                }else
+                {
+                    result.append(", ");
+                }
+            }else
+            {
+                first = true;
+            }
+            if(color)
+            {
+                if(i % 2 == 0)
+                {
+                    result.append(ChatColor.AQUA).append(s);
+                }else
+                {
+                    result.append(ChatColor.GOLD).append(s);
+                }
+            }else
+            {
+                result.append(s);
+            }
+            i++;
+        }
+        return result.toString();
     }
 }
